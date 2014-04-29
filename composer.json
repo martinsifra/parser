@@ -1,6 +1,6 @@
 {
     "name": "martinsifra/parser",
-    "version": "0.1",
+    #"version": "0.1",
     "dist": {
         "url": "https://github.com/martinsifra/parser.git",
         "type": "git"
