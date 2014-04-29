@@ -6,6 +6,6 @@
         "type": "git"
     },
     "require": {
-        "nette/tokenizer": "2.2.*@dev"
+        "nette/tokenizer": "master"
     }
 }
