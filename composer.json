@@ -4,5 +4,8 @@
     "dist": {
         "url": "https://github.com/martinsifra/parser.git",
         "type": "git"
+    },
+    "require": {
+        "nette/tokenizer": "2.2.*@dev",
     }
 }
