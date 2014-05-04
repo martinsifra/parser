@@ -1,0 +1,19 @@
+{
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "martinsifra/parser",
+                "version": "master",
+                "source": {
+                    "url": "https://github.com/martinsifra/parser.git",
+                    "type": "git",
+                    "reference":"master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "nette/tokenizer": "2.2.*@dev"
+    }
+}
