@@ -9,5 +9,8 @@ namespace M;
  */
 class Parser
 {
+    private $parameters;
+    
+    private $iterator;
     
 }

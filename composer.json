@@ -3,5 +3,8 @@
     "dist": {
         "url": "https://github.com/martinsifra/parser.git",
         "type": "git"
+    },
+    "require": {
+        "nette/tokenizer": "dev-master"
     }
 }

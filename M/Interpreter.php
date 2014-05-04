@@ -9,5 +9,8 @@ namespace M;
  */
 class Interpreter
 {
-    //put your code here
+    public function execute()
+    {
+        
+    }
 }
