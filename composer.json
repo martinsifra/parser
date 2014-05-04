@@ -1,12 +1,18 @@
 {
     "name": "martinsifra/parser",
-    "version": "master",
-    "source": {
-        "url": "https://github.com/martinsifra/parser.git",
-        "type": "git",
-        "reference":"master"
-    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin +Sifra",
+            "email": "me@martinsifra.cz"
+        }
+    ],
     "require": {
         "nette/tokenizer": "2.2.*@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "M": ""
+        }
     }
 }
