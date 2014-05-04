@@ -1,10 +1,14 @@
 {
-    "name": "martinsifra/parser",
-    "dist": {
-        "url": "https://github.com/martinsifra/parser.git",
-        "type": "git"
-    },
+    "repositories": [
+        {
+            "name": "martinsifra/parser",
+            "dist": {
+                "url": "https://github.com/martinsifra/parser.git",
+                "type": "git"
+            }
+        }
+    ],
     "require": {
-        "nette/tokenizer": "dev-master"
+        "nette/tokenizer": "2.2.*@dev"
     }
 }
