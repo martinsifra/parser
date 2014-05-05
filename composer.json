@@ -7,7 +7,9 @@
             "email": "me@martinsifra.cz"
         }
     ],
-
+    "require": {
+        "nette/tokenizer": "2.2.*@dev"
+    },
     "autoload": {
         "psr-0": {
             "M": ""
