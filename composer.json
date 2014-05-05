@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "nette/tokenizer": "dev-master"
+        "nette/tokenizer": "2.2.*@dev"
     },
     "autoload": {
         "psr-0": {
