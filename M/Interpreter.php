@@ -9,8 +9,20 @@ namespace M;
  */
 class Interpreter
 {
+    
     public function execute()
     {
         
+    }
+    
+    
+    /**
+     * 
+     * @param array $parameters
+     */
+    public function setParameters($parameters)
+    {
+        
+        return $this;
     }
 }
