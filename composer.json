@@ -3,12 +3,12 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Martin +Sifra",
+            "name": "Martin Šifra",
             "email": "me@martinsifra.cz"
         }
     ],
     "require": {
-        "nette/tokenizer": "2.2.*@dev"
+        "nette/tokenizer": "dev-master"
     },
     "autoload": {
         "psr-0": {
