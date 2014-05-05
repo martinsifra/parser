@@ -59,7 +59,7 @@ class Parser
         $closedBlocks = 0;
 
         // STATEMENT
-        while ($this->iterator->nextToken() && !$this->error) {
+        while ($this->iterator->nextToken()) {
             $tType = $this->iterator->currentToken()[Tokenizer::TYPE];
 
             if ($tType == self::T_IF) {
@@ -98,8 +98,7 @@ class Parser
                         }
                         
                     } else {
-                        dump('Syntax error');
-                        $this->error = TRUE;
+                        $this->error('Syntax error.');
                     }
                 }
 
@@ -122,9 +121,7 @@ class Parser
                             $newBlock = FALSE;
 
                         } else {
-                            dump('Unexpected indentation. (more)');
-                            $this->error = TRUE;
-                            break;
+                            $this->error('Unexpected indentation. (more)');
                         }
 
                     } elseif ($newIndent == $prevIndent) {
@@ -132,9 +129,7 @@ class Parser
                         
                     } else {
                         if ($newBlock) { // A new indented block expected
-                            dump('Expected an indented block.');
-                            $this->error = TRUE;
-                            break;
+                            $this->error('Expected an indented block.');
                         }
 
                         $diff = $prevIndent - $newIndent;
@@ -160,9 +155,7 @@ class Parser
 
                                 break;
                             } else {
-                                dump('Unexpected indentation. (less)');
-                                $this->error = TRUE;
-                                break;
+                                $this->error('Unexpected indentation. (less)');
                             }
                         }
                         break;
@@ -184,15 +177,13 @@ class Parser
                 }
 
             } elseif ($tType == self::T_INDENT) {
-                dump('Unexcepted indentation. ');
-                $this->error = TRUE;
+                $this->error('Unexcepted indentation. ');
 
             } elseif ($tType == self::T_RETURN) {
                 $this->php .= 'return ' . $this->iterator->joinUntil(self::T_EOL, self::T_COMMENT) . ";\n";
 
             } elseif ($tType == self::T_PARAMETER) {
-                dump('Parameter cannot not be L-value.');
-                $this->error = TRUE;
+                $this->error('Parameter cannot not be L-value.');
 //                $this->php .= '$_parameters["'.substr($this->iterator->currentValue(), 1).'"]';
                 
             } elseif ($tType == self::T_VARIABLE) {
@@ -202,12 +193,23 @@ class Parser
 //                $this->php .= str_repeat(' ', $this->phpIndent) . '/* ' . $this->iterator->currentValue() . " */\n";
                 
             } else {
-                dump('Syntax error: Unexpected \'' . trim($this->iterator->currentValue()) .'\'.');
-                $this->error = TRUE;
+                $this->error('Syntax error: Unexpected \'' . trim($this->iterator->currentValue()) .'\'.');
             }
         }
 
         return $closedBlocks;
     }
+    
+    
+    private function error($message = "Unexpected '%s'")
+    {
+        throw new ParserException('Máš tam chybu, vole!');
+    }
 
+}
+
+
+
+class ParserException extends \Exception
+{    
 }
